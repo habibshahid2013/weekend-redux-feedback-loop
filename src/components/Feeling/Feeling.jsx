@@ -14,7 +14,9 @@ function Feeling() {
     return (
         <div>
             <h1>Feeling</h1>
-            <button onClick={nextPage}></button>
+            <h2>Are you feeling ok today? </h2>
+            <input type="number"/>
+            <button onClick={nextPage}>Next</button>
         </div>
 
 

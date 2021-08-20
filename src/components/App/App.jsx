@@ -38,19 +38,19 @@ function App() {
           </ul>
 
          
-            <Route path="/Comments">
+            <Route exact path="/Comments">
             <Comments />
             </Route>
-            <Route path="/Feeling">
+            <Route exact path="/Feeling">
             <Feeling />
             </Route>
-            <Route path="/Support">
+            <Route exact path="/Support">
             <Support />
             </Route>
-          <Route path="/Understanding">
+          <Route exact path="/Understanding">
             <Understanding />
           </Route>
-          <Route path="/Comments">
+          <Route exact path="/Comments">
             <Review />
           </Route>
           

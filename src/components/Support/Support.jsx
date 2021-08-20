@@ -14,6 +14,7 @@ function Support() {
     return (
         <div>
             <h1>Support</h1>
+            <h2></h2>
             <button onClick= {nextPage}></button>
         </div>
 

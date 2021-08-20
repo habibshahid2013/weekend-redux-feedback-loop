@@ -13,7 +13,11 @@ function Review() {
     return (
         <div>
             <h1>Review</h1>
-            <button onClick={nextPage}></button>
+                <p>Feeling:</p>
+                <p>Understanding:</p>
+                <p>Support:</p>
+                <p>Comments:</p>
+            <button onClick={''}>Submit</button>
         </div>
 
 
