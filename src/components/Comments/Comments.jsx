@@ -1,7 +1,14 @@
 import React from 'react'
-import { useHistory } from 'react'
+import { useHistory } from 'react-router-dom'
 
 function Comments(){
+
+    let savePage = useHistory()
+
+    function nextPage(){
+
+        history.push('/comments')
+    }
 
     return(
         <div>

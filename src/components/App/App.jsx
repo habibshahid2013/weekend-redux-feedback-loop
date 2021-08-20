@@ -50,6 +50,9 @@ function App() {
           <Route path="/Understanding">
             <Understanding />
           </Route>
+          <Route path="/Comments">
+            <Review />
+          </Route>
           
         </div>
       </Router>
