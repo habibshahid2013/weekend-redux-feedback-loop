@@ -5,6 +5,7 @@ import Comments from '../Comments/Comments'
 import Feeling from '../Feeling/Feeling'
 import Support from '../Support/Support'
 import Understanding from '../Understanding /Understanding';
+import Review from '../Review/Review'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
             </li>
             <li>
               <Link to="/Understanding">Understanding</Link>
+            </li>
+            <li>
+              <Link to="/Review">Understanding</Link>
             </li>
           </ul>
 

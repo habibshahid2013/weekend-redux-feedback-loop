@@ -1,5 +1,5 @@
 import React from 'react'
-import {useHistory} from 'React-'
+import {useHistory} from 'react'
 
 function Review() {
 
