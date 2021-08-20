@@ -1,9 +1,12 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
+import { useDispatch,useHistory } from 'react-router-dom'
 
 function Comments(){
 
     let savePage = useHistory()
+
+    //Set up dispatch
+    const dispatch = useDispatch();
 
     function nextPage(){
 
