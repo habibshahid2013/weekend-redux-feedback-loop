@@ -13,31 +13,31 @@ import { logger } from 'redux-logger';
 
 
 //Create reducer for each component  
-const feeling = (state =0, action) => {
+const feelingReducer = (state =0, action) => {
     console.log('got an feeling action 🍍', action);
-    if (action.type === "FEELING") {
+    if (action.type === "FEELING_INFO") {
         return (state = action.payload);
     }
     return state;
 };
 
-const understanding = (state = 0, action) => {
+const understandingReducer = (state = 0, action) => {
     console.log('got an understanding action 🚶‍♂️', action);
-    if (action.type === "UNDERSTANDING") {
+    if (action.type === "UNDERSTANDING_INFO") {
         return (state = action.payload);
     }
     return state;
 };
-const comments = (state = 0, action) => {
+const commentsReducer = (state = 0, action) => {
     console.log('got an comment action 🍟', action);
-    if (action.type === "COMMENTS") {
+    if (action.type === "COMMENTS_INFO") {
         return (state = action.payload);
     }
     return state;
 };
-const support = (state = 0, action) => {
+const supportReducer = (state = 0, action) => {
     console.log('got an support action 💂‍♂️', action);
-    if (action.type === "SUPPORT") {
+    if (action.type === "SUPPORT_INFO") {
         return (state = action.payload);
     }
     return state;
@@ -46,10 +46,10 @@ const support = (state = 0, action) => {
 
 const reduxStore = createStore(
     combineReducers({
-        feeling,
-        understanding,
-        comments,
-        support,
+        feelingReducer,
+        understandingReducer,
+        commentsReducer,
+        supportReducer,
     }),
     applyMiddleware(logger)
 );

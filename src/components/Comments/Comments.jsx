@@ -1,5 +1,7 @@
 import React from 'react'
-import { useDispatch,useHistory } from 'react-router-dom'
+import {useHistory } from 'react-router-dom'
+import {useDispatch} from 'react-redux'
+import { useState } from 'react';
 
 function Comments(){
 
@@ -8,15 +10,31 @@ function Comments(){
     //Set up dispatch
     const dispatch = useDispatch();
 
+    //Set up useState
+    const [comments, setComments] = useState('');
+
     function nextPage(){
 
-        history.push('/comments')
+        dispatch({
+            type: "COMMENTS_INFO",
+            payload: comments
+
+        })
+
+        savePage.push('/review')
     }
 
     return(
         <div>
             <h1>Comment</h1>
-            <button Onclick={nextPage}></button>
+            <h2>Leave any comments below</h2>
+            <input 
+            type="text" 
+            value={comments} 
+            placeholder="Leave a comment heree"
+            onChange={(event) => setComments(event.target.value) } />
+            <button onClick={nextPage}>Submit</button>
+            
 
         </div>
 

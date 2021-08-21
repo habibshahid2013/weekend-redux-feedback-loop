@@ -1,21 +1,41 @@
 import React from 'react'
-import { useDispatch, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { useState } from 'react';
 
 function Support() {
 
     let savePage = useHistory()
 
+    //Set up dispatch
+    const dispatch = useDispatch();
+
+    //Set up useState
+    const [support, setSupport] = useState(0);
+
     function nextPage() {
 
-        history.push('/support')
+        dispatch({
+            type: "SUPPORT_INFO",
+            payload: support
+
+        })
+
+
+        savePage.push('/comments')
     }
 
 
     return (
         <div>
             <h1>Support</h1>
-            <h2></h2>
-            <button onClick= {nextPage}></button>
+            <h2>How well are you being supported?</h2>
+            <input
+                type="text"
+                value={support}
+                placeholder="How can we best support you?"
+                onChange={(event) => setSupport(event.target.value)} />
+            <button onClick={nextPage}>Next Page</button>
         </div>
 
 

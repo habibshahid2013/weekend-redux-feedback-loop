@@ -1,14 +1,46 @@
-import React from 'react';
+import React, { useEffect }  from 'react';
 import axios from 'axios';
 import './App.css';
+import SurveyHomePage from '../SurveyHomePage/SurveyHomePage'
 import Comments from '../Comments/Comments'
 import Feeling from '../Feeling/Feeling'
 import Support from '../Support/Support'
 import Understanding from '../Understanding /Understanding';
 import Review from '../Review/Review'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import { useDispatch } from "react-redux";
 
 function App() {
+
+
+  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    console.log("in useEffect");
+    // refreshComments();
+  }, []);
+
+
+  // function refreshComments() {
+  //   axios({
+  //     method: "GET",
+  //     url: "/api/page",
+  //   })
+  //     .then((response) => {
+       
+  //       console.log(response.data);
+  //       // updates this through a dispatch to Redux
+  //       dispatch({
+  //         type: "FEELING_INFO",
+  //         payload: response.data,
+  //       });
+   
+  //     })
+  //     .catch((error) => {
+  //       console.log("error on GET", error);
+  //     });
+  // }
 
   return (
     <div className='App'>
@@ -16,47 +48,26 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
-
-      <Router>
-        <div>
-          <ul>
-            <li>
-              <Link to="/Comments">Comments</Link>
-            </li>
-            <li>
-              <Link to="/feeling">Feeling</Link>
-            </li>
-            <li>
-              <Link to="/Support">Support</Link>
-            </li>
-            <li>
-              <Link to="/Understanding">Understanding</Link>
-            </li>
-            <li>
-              <Link to="/Review">Understanding</Link>
-            </li>
-          </ul>
-
-         
-            <Route exact path="/Comments">
+           <Router>
+            <Route exact path="/">
+              <SurveyHomePage />
+            </Route>
+            <Route exact path="/feeling">
+              <Feeling />
+            </Route>
+            <Route exact path="/understanding">
+              <Understanding />
+            </Route>
+            <Route exact path="/comments">
             <Comments />
             </Route>
-            <Route exact path="/Feeling">
-            <Feeling />
-            </Route>
-            <Route exact path="/Support">
+            <Route exact path="/support">
             <Support />
             </Route>
-          <Route exact path="/Understanding">
-            <Understanding />
+          <Route exact path="/review">
+            <Review/>
           </Route>
-          <Route exact path="/Comments">
-            <Review />
-          </Route>
-          
-        </div>
-      </Router>
-
+        </Router>
     </div>
   );
 }

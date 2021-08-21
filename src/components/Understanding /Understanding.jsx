@@ -1,18 +1,39 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { useState } from 'react';
 
 function Understanding() {
 
     let savePage = useHistory()
+
+    const [understanding, setUnderstanding] = useState(0);
+    
+    //Set up dispatch
+    const dispatch = useDispatch();
+
     function nextPage() {
 
-        history.push('/understanding')
+        dispatch({
+            type: "UNDERSTANDING_INFO",
+            payload: understanding
+
+        })
+
+        savePage.push('/support')
     }
 
     return (
         <div>
             <h1>Understanding </h1>
-            <button onClick= {nextPage}></button>
+            <h2>How well are you understanding things? 1-5</h2>
+            <input 
+            required
+            value={understanding}
+            min={1}
+            max={5}
+            onChange={(event) => setUnderstanding(event.target.value)}/>
+            <button onClick={nextPage}>Next Page</button>
         </div>
 
     )
