@@ -7,8 +7,10 @@ import Feeling from '../Feeling/Feeling'
 import Support from '../Support/Support'
 import Understanding from '../Understanding /Understanding';
 import Review from '../Review/Review'
+import Success from '../Success/Success';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import { useDispatch } from "react-redux";
+
 
 function App() {
 
@@ -66,6 +68,9 @@ function App() {
           <Route exact path="/review">
             <Review/>
           </Route>
+        <Route exact path="/success">
+          <Success />
+        </Route>
         </Router>
     </div>
   );
