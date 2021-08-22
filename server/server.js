@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
-const surveyRouter = require('./routes/survey.routes')
+const surveyRouter = require('./routes/survey.routers')
 app.use('/api/survey', surveyRouter)
 
 /** ---------- START SERVER ---------- **/

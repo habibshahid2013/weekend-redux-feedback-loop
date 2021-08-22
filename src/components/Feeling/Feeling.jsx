@@ -15,6 +15,14 @@ function Feeling() {
 
     function nextPage() {
 
+        if(
+            feelings.length != null &&
+            feelings.length < 2 &&
+            feelings.length === 1 &
+            feelings >= 0 &&
+            feelings <= 5
+        ) {
+
         dispatch({
             type: "FEELING_INFO",
             payload: feelings
@@ -23,8 +31,11 @@ function Feeling() {
 
         savePage.push('/understanding')
     }
-
-
+     else {
+        alert("{Please enter a value between 0-5")
+    }
+    }
+    
     return (
         <div>
             <h1>Feeling</h1>
@@ -39,8 +50,9 @@ function Feeling() {
         </div>
 
 
-    )
+    )  
 
 }
+
 
 export default Feeling;

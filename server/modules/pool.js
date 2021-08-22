@@ -38,4 +38,10 @@ if (process.env.DATABASE_URL) {
     };
 }
 
-module.exports = new pg.Pool(config);
+const pool = new pg.Pool(config);
+pool.on('error', (err) => {
+    console.log("unexpected error on idle client", err);
+    process.exit(-1);
+})
+
+module.exports = pool;

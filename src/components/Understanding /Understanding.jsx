@@ -14,6 +14,14 @@ function Understanding() {
 
     function nextPage() {
 
+        if (
+            understanding.length != null &&
+            understanding.length < 2 &&
+            understanding.length === 1 & 
+            understanding >= 0 &&
+            understanding <= 5 
+        ){
+
         dispatch({
             type: "UNDERSTANDING_INFO",
             payload: understanding
@@ -22,6 +30,10 @@ function Understanding() {
 
         savePage.push('/support')
     }
+     else {
+        alert ("{Please enter a value between 0-5")
+    }
+}
 
     return (
         <div>
@@ -38,6 +50,7 @@ function Understanding() {
 
     )
 
+    
 }
 
 export default Understanding;

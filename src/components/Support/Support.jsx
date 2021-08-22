@@ -14,17 +14,26 @@ function Support() {
     const [support, setSupport] = useState(0);
 
     function nextPage() {
+            
+         if(   support.length != null &&
+            support.length < 2 &&
+            support.length === 1 &
+            support >= 0 &&
+            support <= 5
 
+         ){
         dispatch({
             type: "SUPPORT_INFO",
             payload: support
 
         })
 
-
         savePage.push('/comments')
+        }
+     else {
+        alert("{Please enter a value between 0-5")
     }
-
+    }
 
     return (
         <div>

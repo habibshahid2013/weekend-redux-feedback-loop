@@ -31,7 +31,7 @@ function Comments(){
             <input 
             type="text" 
             value={comments} 
-            placeholder="Leave a comment heree"
+            placeholder="Leave a comment here"
             onChange={(event) => setComments(event.target.value) } />
             <button onClick={nextPage}>Submit</button>
             

@@ -21,7 +21,7 @@ function Review(onSubmit) {
     function onSubmitButton() {
         console.log(onSubmit);
 
-        axios.post({
+        axios({
             method: "POST",
             url: '/api/survey',
             data: {
