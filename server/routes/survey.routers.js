@@ -6,7 +6,7 @@ const router = express.Router();
 router.post('/', (req,res) => {
 
     const newSurvey = req.body
-
+    //Here is where the sql input are sent to the database
     const sqlQuery = `INSERT INTO "feedback"
                         ("feeling", "understanding", "support", "comments")
                       VALUES

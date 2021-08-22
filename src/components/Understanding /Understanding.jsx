@@ -13,7 +13,7 @@ function Understanding() {
     const dispatch = useDispatch();
 
     function nextPage() {
-
+         //Set up conditionals to make sure the reducer were passed through correctly
         if (
             understanding.length != null &&
             understanding.length < 2 &&
@@ -23,11 +23,12 @@ function Understanding() {
         ){
 
         dispatch({
+            //The payload is being dispatch to the index.js 
             type: "UNDERSTANDING_INFO",
             payload: understanding
 
         })
-
+        //make sure history went to the next page 
         savePage.push('/support')
     }
      else {

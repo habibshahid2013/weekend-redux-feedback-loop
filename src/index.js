@@ -20,7 +20,7 @@ const feelingReducer = (state =0, action) => {
     }
     return state;
 };
-
+//Create reducer for each component  
 const understandingReducer = (state = 0, action) => {
     console.log('got an understanding action 🚶‍♂️', action);
     if (action.type === "UNDERSTANDING_INFO") {
@@ -28,6 +28,7 @@ const understandingReducer = (state = 0, action) => {
     }
     return state;
 };
+//Create reducer for each component  
 const commentsReducer = (state = 0, action) => {
     console.log('got an comment action 🍟', action);
     if (action.type === "COMMENTS_INFO") {
@@ -35,6 +36,7 @@ const commentsReducer = (state = 0, action) => {
     }
     return state;
 };
+//Create reducer for each component  
 const supportReducer = (state = 0, action) => {
     console.log('got an support action 💂‍♂️', action);
     if (action.type === "SUPPORT_INFO") {
@@ -43,7 +45,7 @@ const supportReducer = (state = 0, action) => {
     return state;
 };
 
-
+//Store is created and the reducers are placed within the store
 const reduxStore = createStore(
     combineReducers({
         feelingReducer,
@@ -51,6 +53,7 @@ const reduxStore = createStore(
         commentsReducer,
         supportReducer,
     }),
+    //The logger is also stored within the store
     applyMiddleware(logger)
 );
 

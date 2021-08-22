@@ -10,6 +10,8 @@ app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
 const surveyRouter = require('./routes/survey.routers')
+
+//app use ensure the pool is correctly connected 
 app.use('/api/survey', surveyRouter)
 
 /** ---------- START SERVER ---------- **/

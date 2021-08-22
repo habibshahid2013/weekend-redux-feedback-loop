@@ -15,10 +15,9 @@ function App() {
 
   const dispatch = useDispatch();
 
-
+  //The use use effect acts as the on ready on the app.jsx
   useEffect(() => {
     console.log("in useEffect");
-    // refreshComments();
   }, []);
 
 

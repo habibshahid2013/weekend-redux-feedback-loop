@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { useState } from 'react';
 
 function Feeling() {
-
+    //The history button is called here
     let savePage = useHistory()
 
     //Set up dispatch
@@ -14,7 +14,7 @@ function Feeling() {
     const [feelings, setFeelings] = useState(0);
 
     function nextPage() {
-
+         //Set up conditionals to make sure the reducer were passed through correctly
         if(
             feelings.length != null &&
             feelings.length < 2 &&
@@ -24,11 +24,12 @@ function Feeling() {
         ) {
 
         dispatch({
+            //The payload is being dispatch to the index.js 
             type: "FEELING_INFO",
             payload: feelings
 
         })
-
+        //make sure history went to the next page 
         savePage.push('/understanding')
     }
      else {

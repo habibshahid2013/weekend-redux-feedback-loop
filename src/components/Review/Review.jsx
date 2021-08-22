@@ -20,7 +20,7 @@ function Review(onSubmit) {
 
     function onSubmitButton() {
         console.log(onSubmit);
-
+        //here the data is being sent to the DB through axios
         axios({
             method: "POST",
             url: '/api/survey',
@@ -35,6 +35,7 @@ function Review(onSubmit) {
         }).catch((error) => {
             console.log("error from the POST /survey", error);
         })
+        //make sure history went to the next page 
         savePage.push('/')
     }
     return (

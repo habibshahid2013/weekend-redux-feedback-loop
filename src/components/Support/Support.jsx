@@ -14,7 +14,7 @@ function Support() {
     const [support, setSupport] = useState(0);
 
     function nextPage() {
-            
+        //Set up conditionals to make sure the reducer were passed through correctly
          if(   support.length != null &&
             support.length < 2 &&
             support.length === 1 &
@@ -27,7 +27,7 @@ function Support() {
             payload: support
 
         })
-
+        //make sure history went to the next page 
         savePage.push('/comments')
         }
      else {

@@ -14,13 +14,13 @@ function Comments(){
     const [comments, setComments] = useState('');
 
     function nextPage(){
-
+        //The payload is being dispatch to the index.js 
         dispatch({
             type: "COMMENTS_INFO",
             payload: comments
 
         })
-
+        //make sure history went to the next page 
         savePage.push('/review')
     }
 

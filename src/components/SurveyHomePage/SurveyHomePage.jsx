@@ -16,10 +16,12 @@ function SurveyHomePage() {
     function nextPage() {
 
         dispatch({
+            //The payload is being dispatch to the index.js 
             type: "SURVEY_INFO",
             payload: survey
 
         })
+        //make sure history went to the next page 
         savePage.push('/feeling')
     }
 
