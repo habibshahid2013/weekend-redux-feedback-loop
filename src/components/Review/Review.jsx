@@ -23,7 +23,7 @@ function Review(onSubmit) {
 
         axios.post({
             method: "POST",
-            url:'/survey',
+            url: '/api/survey',
             data: {
                 comments,
                 feeling,
