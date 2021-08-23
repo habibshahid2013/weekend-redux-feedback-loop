@@ -38,6 +38,7 @@ if (process.env.DATABASE_URL) {
     };
 }
 
+//DATABASE DRIVER
 //Here the pool is set up so that it connects to the router.
 const pool = new pg.Pool(config);
 pool.on('error', (err) => {

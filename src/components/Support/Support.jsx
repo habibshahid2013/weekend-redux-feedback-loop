@@ -22,6 +22,7 @@ function Support() {
 
     function nextPage() {
         //Set up conditionals to make sure the reducer were passed through correctly
+        //Validation to make sure the inputs are providing proper data 
          if(   support.length != null &&
             support.length < 2 &&
             support.length === 1 &

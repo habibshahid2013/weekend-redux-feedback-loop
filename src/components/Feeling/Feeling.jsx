@@ -27,6 +27,7 @@ function Feeling() {
 
     function nextPage() {
          //Set up conditionals to make sure the reducer were passed through correctly
+         //Validation to make sure the inputs are providing proper data 
         if(
             feelings.length != null &&
             feelings.length < 2 &&

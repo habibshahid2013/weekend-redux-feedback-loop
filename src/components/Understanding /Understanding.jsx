@@ -23,6 +23,7 @@ function Understanding() {
 
     function nextPage() {
          //Set up conditionals to make sure the reducer were passed through correctly
+         //Validation to make sure the inputs are providing proper data 
         if (
             understanding.length != null &&
             understanding.length < 2 &&
