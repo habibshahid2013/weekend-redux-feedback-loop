@@ -30,10 +30,9 @@ function SurveyHomePage() {
         <div>
             <h1>Survey Home Page</h1>
             <h2>Please Start Survey</h2>
-            <input
-                value={survey}
-                onChange={(event) => setSurveyHomePage(event.target.value)} />
-            <button onClick={nextPage}>Submit</button>
+            <button value={survey}
+                    onClick={nextPage}
+                    onChange={(event) => setSurveyHomePage(event.target.value)}>Start Here</button>
         </div>
 
 

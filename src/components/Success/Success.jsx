@@ -9,10 +9,10 @@ function Success() {
     }
     return (
         <div>
-            <h1>Congratulations, you made it!</h1>
+            <h1>Thank you for taking the survey</h1>
             <br />
-            <h3>Care to leave some more feedback?</h3>
-            <button>Leave Feedback</button>
+            <h3>Please leave feedback below</h3>
+            <button variant="contained" color="primary" onClick={nextPage}>Leave More Feedback</button>
         </div>
     )
 }

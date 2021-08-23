@@ -32,11 +32,11 @@ function Review(onSubmit) {
             },
         }).then((response) => {
             console.log("response from the DB", response);
+            //make sure history went to the next page 
+            savePage.push('/success')
         }).catch((error) => {
             console.log("error from the POST /survey", error);
         })
-        //make sure history went to the next page 
-        savePage.push('/')
     }
     return (
         <div>
