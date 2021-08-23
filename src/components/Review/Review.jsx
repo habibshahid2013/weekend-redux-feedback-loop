@@ -8,12 +8,18 @@ import axios from 'axios';
 
 function Review(onSubmit) {
 
+    let savePage = useHistory()
+
+    function backButton() {
+
+        savePage.push('/comments')
+    }
+
     const comments = useSelector((store) => store.commentsReducer); // selects from store state
     const feeling = useSelector((store) => store.feelingReducer); // selects from store state
     const support = useSelector((store) => store.supportReducer); // selects from store state
     const understanding = useSelector((store) => store.understandingReducer); // selects from store state
 
-    let savePage = useHistory()
 
     //Set up dispatch
     const dispatch = useDispatch();
@@ -46,6 +52,7 @@ function Review(onSubmit) {
                 <p>Support: {support}</p>
                 <p>Comments: {comments}</p>
             <button onClick={onSubmitButton}>Submit</button>
+            <button onClick={backButton}>Back</button>
         </div>
 
 

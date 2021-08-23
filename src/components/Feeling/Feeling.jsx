@@ -3,15 +3,27 @@ import {  useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useState } from 'react';
 
+
+
 function Feeling() {
+
     //The history button is called here
     let savePage = useHistory()
+
+    function backButton() {
+
+        savePage.push('/')
+    }
+
+    
 
     //Set up dispatch
     const dispatch = useDispatch();
 
     //Set up useState
     const [feelings, setFeelings] = useState(0);
+
+  
 
     function nextPage() {
          //Set up conditionals to make sure the reducer were passed through correctly
@@ -48,6 +60,7 @@ function Feeling() {
             value={feelings}
             onChange={(event) => setFeelings(event.target.value)}/>
             <button onClick={nextPage}>Next</button>
+            <button onClick={backButton}>Back</button>
         </div>
 
 

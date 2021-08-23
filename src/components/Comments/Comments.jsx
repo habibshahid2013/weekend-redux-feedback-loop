@@ -3,9 +3,17 @@ import {useHistory } from 'react-router-dom'
 import {useDispatch} from 'react-redux'
 import { useState } from 'react';
 
+
+
 function Comments(){
 
+    function backButton() {
+
+        savePage.push('/support')
+    }
+
     let savePage = useHistory()
+
 
     //Set up dispatch
     const dispatch = useDispatch();
@@ -34,8 +42,7 @@ function Comments(){
             placeholder="Leave a comment here"
             onChange={(event) => setComments(event.target.value) } />
             <button onClick={nextPage}>Submit</button>
-            
-
+            <button onClick={backButton}>Back</button>
         </div>
 
 

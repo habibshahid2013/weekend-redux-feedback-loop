@@ -3,9 +3,16 @@ import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useState } from 'react';
 
+
 function Support() {
 
+    function backButton() {
+
+        savePage.push('/understanding')
+    }
     let savePage = useHistory()
+
+
 
     //Set up dispatch
     const dispatch = useDispatch();
@@ -45,6 +52,7 @@ function Support() {
                 placeholder="How can we best support you?"
                 onChange={(event) => setSupport(event.target.value)} />
             <button onClick={nextPage}>Next Page</button>
+            <button onClick={backButton}> Back</button>
         </div>
 
 
