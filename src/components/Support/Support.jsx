@@ -47,9 +47,11 @@ function Support() {
             <h1>Support</h1>
             <h2>How well are you being supported?</h2>
             <input
-                type="text"
+                type="number"
+                min={0}
+                max={5}
                 value={support}
-                placeholder="How can we best support you?"
+                placeholder="1-5"
                 onChange={(event) => setSupport(event.target.value)} />
             <button onClick={nextPage}>Next Page</button>
             <button onClick={backButton}> Back</button>
